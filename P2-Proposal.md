@@ -13,10 +13,10 @@ Bingo game that can be based on a particular series determined by a master user.
 * Leaderboard Table
 
 ## User Stories
-*The user should be able to sign up and login 
-*The user should be able to cross out squares on the bingo card when called
-*The user should be able to assemble bingo cards for their game.
-*The user should be able to select which shows they will pull questions from.
+* The user should be able to sign up and login 
+* The user should be able to cross out squares on the bingo card when called
+* The user should be able to assemble bingo cards for their game.
+* The user should be able to select which shows they will pull questions from.
 * The user (admin) could add new shows and questions.
 * The user should be able to pull TV Show information from IMDb. 
 * The user should be able to view a leaderboard showing the highest scores.
