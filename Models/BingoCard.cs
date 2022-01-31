@@ -1,4 +1,5 @@
 namespace Models;
+using System.Data;
 
 public class BingoCard{
     public BingoCard(){}
