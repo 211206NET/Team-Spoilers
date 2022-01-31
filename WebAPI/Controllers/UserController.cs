@@ -9,28 +9,44 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class UserController : ControllerBase
 {
-    // GET: api/values
-    public IEnumerable<string> Get()
+    private IBL _bl;
+    
+    public UserController(IBL bl)
     {
-        return new string[] { "value1", "value2" };
+        _bl = bl;
+    }
+
+    // GET: api/values
+    [HttpGet]
+    public List<User> Get()
+    {
+        List<User> allUser = _bl.GetAllUsers();
+        return allUser;
     }
 
     // GET: api/values/5
+    [HttpGet("{id}")]
     public string Get(int id)
     {
         return "value";
     }
 
     // POST: api/values
-    public void Post([FromBody] string value)
+    [HttpPost]
+    //For the moment until i get login and sign up working
+    public ActionResult Post([FromBody] User userToAdd)
     {
+        _bl.AddUser(userToAdd);
+        return Created("Succesffully added", userToAdd);
     }
     // PUT: api/values/5
+    [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
 
     // DELETE: api/values/5
+    [HttpDelete("{id}")]
     public void Delete(int id)
     {
     }

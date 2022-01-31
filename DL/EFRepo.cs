@@ -10,11 +10,12 @@ public class EFRepo : IRepo
     {
         _context = (BGDBContext) context;
     }
-    public void AddUser(User userToAdd)
+    public User AddUser(User userToAdd)
     {
         _context.Add(userToAdd);
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
+        return userToAdd;
     }
 
     public List<BingoCard> GetAllBingoCards()
