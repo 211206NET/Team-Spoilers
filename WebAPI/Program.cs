@@ -11,8 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<BGDBContext>(options => options.UseNpgsql(
-    builder.Configuration.GetConnectionString("PostgreBGDB")));
+builder.Services.AddDbContext<DbContext, BGDBContext>(options => options.UseNpgsql(
+builder.Configuration.GetConnectionString("PostgreBGDB")));
+
+builder.Services.AddScoped<IRepo, EFRepo>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
