@@ -19,18 +19,7 @@ public class Player{
     public bool isMaster { get; set; }
     public int UserID { get; set; }
     public int Score { get; set; }
-
-    public void startGame(Player nGamer){
-        Game nGame = new Game();
-        nGamer.isMaster = true;
-        nGamer.Score = 0;
-    }
-
-    public void addPoints(Player contestant, BingoCard card){
-        if(card.isMarked == true){
-            contestant.Score++;
-        }
-    }
+    
     public override string ToString()
     {
         return $"Player ID: {this.PlayerID} \nMaster? {this.isMaster} \nUser ID: {this.UserID} \nScore: {this.Score}";
