@@ -17,6 +17,11 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
     }
 
+    public List<BingoCard> GetAllBingoCards()
+    {
+        throw new NotImplementedException();
+    }
+
     public List<User> GetAllUsers()
     {
         List<User> allUsers =_context.Users.Select(r => r).ToList();
