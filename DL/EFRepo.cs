@@ -11,7 +11,7 @@ public class EFRepo : IRepo
         _context = (BGDBContext) context;
     }
 
-    public Answer AddAnswer(int bingoCardID, Answer answerToAdd)
+    public Answer AddAnswer(Answer answerToAdd)
     {
         _context.Add(answerToAdd);
         _context.SaveChanges();

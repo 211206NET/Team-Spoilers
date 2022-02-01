@@ -32,9 +32,9 @@ namespace WebAPI.Controllers
 
         // POST api/<AnswerController>
         [HttpPost("{bingoCardID}")]
-        public void Post(int bingoCardID, [FromBody] Answer answerToAdd)
+        public void Post([FromBody] Answer answerToAdd)
         {
-            _bl.AddAnswer(bingoCardID, answerToAdd);
+            _bl.AddAnswer(answerToAdd);
         }
 
         // PUT api/<AnswerController>/5

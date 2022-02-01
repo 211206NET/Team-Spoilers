@@ -1,7 +1,6 @@
 namespace BL;
 
 using System.Collections.Generic;
-using DL;
 using Models;
 
 public class BGBL :IBL
@@ -37,9 +36,9 @@ public class BGBL :IBL
         return _dl.GetAnswersbyBingoCardId(bingoCardID);
     }
 
-    public Answer AddAnswer(int bingoCardID, Answer answerToAdd)
+    public Answer AddAnswer(Answer answerToAdd)
     {
-        return _dl.AddAnswer(bingoCardID, answerToAdd);
+        return _dl.AddAnswer(answerToAdd);
     }
 
     public List<BingoCard> GetAllBingoCards()
