@@ -7,9 +7,9 @@ public class BGRepo{
         nGamer.Score = 0;
     }
 
-    public void addPoints(Player contestant, BingoCard card){
-        if(card.isMarked == true){
-            contestant.Score++;
-        }
-    }
+    // public void addPoints(Player contestant, BingoCard card){
+    //     if(card.isMarked == true){
+    //         contestant.Score++;
+    //     }
+    // }
 }

@@ -31,4 +31,19 @@ public class BGBL :IBL
     {
         return _dl.AddUser(userToAdd);
     }
+
+    public List<Answer> GetAnswersbyBingoCardId(int bingoCardID)
+    {
+        return _dl.GetAnswersbyBingoCardId(bingoCardID);
+    }
+
+    public Answer AddAnswer(int bingoCardID, Answer answerToAdd)
+    {
+        return _dl.AddAnswer(bingoCardID, answerToAdd);
+    }
+
+    public List<BingoCard> GetAllBingoCards()
+    {
+        throw new NotImplementedException();
+    }
 }
