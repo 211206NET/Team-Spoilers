@@ -10,4 +10,5 @@ public interface IBL
     List<BingoCard> GetAllBingoCards();
     List<BingoCard> GetBingoCardsbyUserId(int userID);
     List<Player> GetPlayersByUserId(int userID);
+    Answer UpdateAnswer(int AnswerID, int marked);
 }

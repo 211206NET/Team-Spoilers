@@ -57,4 +57,12 @@ public class EFRepo : IRepo
     public List<Player> GetPlayersByUserId(int userID){
         return _context.Players.Where(r => r.UserID == userID).ToList();
     }
+
+    public object Update(object entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return entity;
+    }
 }
