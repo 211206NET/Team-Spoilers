@@ -5,6 +5,7 @@ public interface IRepo
     List<User> GetAllUsers();
     User AddUser (User userToAdd);
 
+    void DeleteUser(string userToDelete);
     List<BingoCard> GetAllBingoCards();
 
     List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
