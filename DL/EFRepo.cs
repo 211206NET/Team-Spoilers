@@ -27,6 +27,12 @@ public class EFRepo : IRepo
         return userToAdd;
     }
 
+    public void DeleteUser(string userToDelete){
+        _context.Remove(_context.Users.Single(u => u.UserName == userToDelete));
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public List<BingoCard> GetAllBingoCards()
     {
         throw new NotImplementedException();

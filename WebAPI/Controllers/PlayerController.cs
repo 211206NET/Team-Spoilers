@@ -9,6 +9,11 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class PlayerController : ControllerBase
 {
+    private IBL _bl;
+
+    public PlayerController(IBL bl){
+        _bl = bl;
+    }
     // GET: api/values
     [HttpGet]
     public IEnumerable<string> Get()
@@ -18,9 +23,9 @@ public class PlayerController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public List<Player> Get(int id)
     {
-        return "value";
+        return _bl.GetPlayersByUserId(id);
     }
 
     // POST: api/values
