@@ -6,7 +6,7 @@ public interface IBL
     User AddUser (User userToAdd);
     void DeleteUser(string userToDelete);
     List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
-    Answer AddAnswer (int bingoCardID, Answer answerToAdd);
+    Answer AddAnswer (Answer answerToAdd);
     List<BingoCard> GetAllBingoCards();
     List<BingoCard> GetBingoCardsbyUserId(int userID);
     List<Player> GetPlayersByUserId(int userID);
