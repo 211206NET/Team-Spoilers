@@ -3,5 +3,9 @@ namespace BL;
 public interface IBL
 {
     List<User> GetAllUsers();
-    void AddUser (User userToAdd);
+    User AddUser (User userToAdd);
+    List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
+    Answer AddAnswer (int bingoCardID, Answer answerToAdd);
+    List<BingoCard> GetAllBingoCards();
+    List<BingoCard> GetBingoCardsbyUserId(int userID);
 }

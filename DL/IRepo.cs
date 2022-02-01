@@ -3,7 +3,11 @@ namespace DL;
 public interface IRepo
 {
     List<User> GetAllUsers();
-    void AddUser (User userToAdd);
+    User AddUser (User userToAdd);
 
     List<BingoCard> GetAllBingoCards();
+
+    List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
+    Answer AddAnswer (int bingoCardID, Answer answerToAdd);
+    List<BingoCard> GetBingoCardsbyUserId(int userID);
 }
