@@ -50,3 +50,6 @@ Bingo game that can be based on a particular series determined by a master user.
 
 ## Tech Stack
 * C#
+* HTML
+* CSS
+* TypeScript
