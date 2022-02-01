@@ -47,4 +47,8 @@ public class EFRepo : IRepo
     {
         return _context.BingoCards.Where(r => r.UserID == userID).ToList();
     }
+
+    public List<Player> GetPlayersByUserId(int userID){
+        return _context.Players.Where(r => r.UserID == userID).ToList();
+    }
 }
