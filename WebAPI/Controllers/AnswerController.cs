@@ -10,6 +10,12 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AnswerController : ControllerBase
     {
+        private IBL _bl;
+
+        public AnswerController(IBL bl)
+        {
+            _bl = bl;
+        }
         // GET: api/<AnswerController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -19,7 +25,7 @@ namespace WebAPI.Controllers
 
         // GET api/<AnswerController>/5
         [HttpGet("{bingoCardID}")]
-        public List<AnswerController> Get(int bingoCardID)
+        public List<Answer> Get(int bingoCardID)
         {
             return _bl.GetAnswersbyBingoCardId(bingoCardID);
         }
@@ -35,6 +41,7 @@ namespace WebAPI.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+            //use update for Marking the answers
         }
 
         // DELETE api/<AnswerController>/5

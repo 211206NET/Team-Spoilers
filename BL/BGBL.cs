@@ -46,4 +46,9 @@ public class BGBL :IBL
     {
         throw new NotImplementedException();
     }
+
+    public List<BingoCard> GetBingoCardsbyUserId(int userID)
+    {
+        return _dl.GetBingoCardsbyUserId(userID);
+    }
 }

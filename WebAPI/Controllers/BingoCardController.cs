@@ -9,6 +9,13 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class BingoCardController : ControllerBase
 {
+    private IBL _bl;
+
+    public BingoCardController(IBL bl)
+    {
+        _bl = bl;
+    }
+
     // GET: api/values
     [HttpGet]
     public IEnumerable<string> Get()
@@ -21,6 +28,13 @@ public class BingoCardController : ControllerBase
     public string Get(int id)
     {
         return "value";
+    }
+
+    [HttpGet("Get Bingo Cards by{UserID}")]
+    public ActionResult<BingoCard> GetBingoCards(int userID)
+    {
+        List<BingoCard> allCards = _bl.GetBingoCardsbyUserId(userID);
+        return Ok(allCards);
     }
 
     // POST: api/values

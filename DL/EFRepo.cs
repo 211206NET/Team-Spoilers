@@ -42,4 +42,9 @@ public class EFRepo : IRepo
     {
         return _context.Answers.Where(r => r.BingoCardID == bingoCardID).ToList();
     }
+
+    public List<BingoCard> GetBingoCardsbyUserId(int userID)
+    {
+        return _context.BingoCards.Where(r => r.UserID == userID).ToList();
+    }
 }
