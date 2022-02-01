@@ -50,11 +50,11 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            // Answer answerToDelete = _bl.GetAnswersbyBingoCardId(id);
-            // if(answerToDelete != null)
-            // {
-            //     _bl.Delete(reviewToDelete);
-            // }
+            Answer answerToDelete = _bl.GetAnswerbyId(id);
+            if(answerToDelete != null)
+            {
+                _bl.Delete(answerToDelete);
+            }
         }
     }
 }

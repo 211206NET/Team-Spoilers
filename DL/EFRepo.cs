@@ -27,6 +27,13 @@ public class EFRepo : IRepo
         return userToAdd;
     }
 
+    public void Delete(object entity)
+    {
+        _context.Remove(entity);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public void DeleteUser(string userToDelete){
         _context.Remove(_context.Users.Single(u => u.UserName == userToDelete));
         _context.SaveChanges();
@@ -42,6 +49,12 @@ public class EFRepo : IRepo
     {
         List<User> allUsers =_context.Users.Select(r => r).ToList();
         return allUsers;
+    }
+
+    public Answer GetAnswerbyId(int answerID)
+    {
+        List<Answer> answer = _context.Answers.Where(r => r.ID == answerID).ToList();
+        return answer[0];
     }
 
     public List<Answer> GetAnswersbyBingoCardId(int bingoCardID)
