@@ -5,7 +5,7 @@ public interface IBL
     List<User> GetAllUsers();
     User AddUser (User userToAdd);
     List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
-    Answer AddAnswer (int bingoCardID, Answer answerToAdd);
+    Answer AddAnswer (Answer answerToAdd);
     List<BingoCard> GetAllBingoCards();
     List<BingoCard> GetBingoCardsbyUserId(int userID);
 }
