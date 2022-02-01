@@ -31,6 +31,10 @@ public class BGBL :IBL
         return _dl.AddUser(userToAdd);
     }
 
+    public void DeleteUser(string userToDelete){
+        _dl.DeleteUser(userToDelete);
+    }
+
     public List<Answer> GetAnswersbyBingoCardId(int bingoCardID)
     {
         return _dl.GetAnswersbyBingoCardId(bingoCardID);

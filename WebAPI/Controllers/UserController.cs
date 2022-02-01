@@ -47,7 +47,8 @@ public class UserController : ControllerBase
 
     // DELETE: api/values/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(string id)
     {
+        _bl.DeleteUser(id);
     }
 }
