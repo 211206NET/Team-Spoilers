@@ -53,3 +53,4 @@ Bingo game that can be based on a particular series determined by a master user.
 * HTML
 * CSS
 * TypeScript
+* JavaScript
