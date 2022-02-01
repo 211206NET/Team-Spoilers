@@ -27,6 +27,13 @@ public class EFRepo : IRepo
         return userToAdd;
     }
 
+    public void Delete(object entity)
+    {
+        _context.Remove(entity);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public void DeleteUser(string userToDelete){
         _context.Remove(_context.Users.Single(u => u.UserName == userToDelete));
         _context.SaveChanges();
@@ -44,6 +51,12 @@ public class EFRepo : IRepo
         return allUsers;
     }
 
+    public Answer GetAnswerbyId(int answerID)
+    {
+        List<Answer> answer = _context.Answers.Where(r => r.ID == answerID).ToList();
+        return answer[0];
+    }
+
     public List<Answer> GetAnswersbyBingoCardId(int bingoCardID)
     {
         return _context.Answers.Where(r => r.BingoCardID == bingoCardID).ToList();
@@ -56,5 +69,13 @@ public class EFRepo : IRepo
 
     public List<Player> GetPlayersByUserId(int userID){
         return _context.Players.Where(r => r.UserID == userID).ToList();
+    }
+
+    public object Update(object entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return entity;
     }
 }

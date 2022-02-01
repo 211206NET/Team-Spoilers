@@ -16,12 +16,12 @@ namespace WebAPI.Controllers
         {
             _bl = bl;
         }
-        // GET: api/<AnswerController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        // // GET: api/<AnswerController>
+        // [HttpGet]
+        // public IEnumerable<string> Get()
+        // {
+        //     return new string[] { "value1", "value2" };
+        // }
 
         // GET api/<AnswerController>/5
         [HttpGet("{bingoCardID}")]
@@ -38,16 +38,23 @@ namespace WebAPI.Controllers
         }
 
         // PUT api/<AnswerController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{answerID}")]
+        public void Put(int answerID, [FromBody] int marked)
         {
             //use update for Marking the answers
+            //gonna need get answerbyId
+            _bl.UpdateAnswer(answerID, marked);
         }
 
         // DELETE api/<AnswerController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Answer answerToDelete = _bl.GetAnswerbyId(id);
+            if(answerToDelete != null)
+            {
+                _bl.Delete(answerToDelete);
+            }
         }
     }
 }

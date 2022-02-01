@@ -9,5 +9,8 @@ public interface IBL
     Answer AddAnswer (Answer answerToAdd);
     List<BingoCard> GetAllBingoCards();
     List<BingoCard> GetBingoCardsbyUserId(int userID);
+    Answer UpdateAnswer(int AnswerID, int marked);
     List<Player> GetPlayersByUserId(int userID);
+    void Delete(object entity);
+    Answer GetAnswerbyId(int answerID);
 }

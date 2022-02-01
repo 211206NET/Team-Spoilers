@@ -56,6 +56,19 @@ public class BGBL :IBL
     }
 
     public List<Player> GetPlayersByUserId(int userID){
-        return _dl.GetPlayersByUserId(userID);
+        return _dl.GetPlayersByUserId(userID);}
+
+    public Answer UpdateAnswer(int AnswerID, int marked)
+    {
+        return (Answer) _dl.Update(marked);
+    }
+
+    public void Delete(object entity)
+    {
+        _dl.Delete(entity);
+    }
+    public Answer GetAnswerbyId(int answerID)
+    {
+        return _dl.GetAnswerbyId(answerID);
     }
 }
