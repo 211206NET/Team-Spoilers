@@ -62,4 +62,13 @@ public class BGBL :IBL
     {
         return (Answer) _dl.Update(marked);
     }
+
+    public void Delete(object entity)
+    {
+        _dl.Delete(entity);
+    }
+    public Answer GetAnswerbyId(int answerID)
+    {
+        return _dl.GetAnswerbyId(answerID);
+    }
 }
