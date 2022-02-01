@@ -27,4 +27,15 @@ public class EFRepo : IRepo
         List<User> allUsers =_context.Users.Select(r => r).ToList();
         return allUsers;
     }
+    public User GetUserByID(int usId){
+        List<User> allUsers = GetAllUsers();
+        foreach(User us in allUsers){
+            if(us.UserID == usId){
+                return us;
+            }
+        }
+        return new User();
+    }
+    public void startGame(){}
+    public void addPoints(){}
 }
