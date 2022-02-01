@@ -50,4 +50,8 @@ public class BGBL :IBL
     {
         return _dl.GetBingoCardsbyUserId(userID);
     }
+
+    public List<Player> GetPlayersByUserId(int userID){
+        return _dl.GetPlayersByUserId(userID);
+    }
 }
