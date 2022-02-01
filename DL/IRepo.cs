@@ -11,4 +11,5 @@ public interface IRepo
     Answer AddAnswer (Answer answerToAdd);
     List<BingoCard> GetBingoCardsbyUserId(int userID);
     List<Player> GetPlayersByUserId(int userID);
+    object Update(object entity);
 }

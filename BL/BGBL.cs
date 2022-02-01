@@ -50,4 +50,10 @@ public class BGBL :IBL
     {
         return _dl.GetBingoCardsbyUserId(userID);
     }
+
+
+    public Answer UpdateAnswer(int AnswerID, int marked)
+    {
+        return (Answer) _dl.Update(marked);
+    }
 }
