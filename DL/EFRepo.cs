@@ -10,11 +10,21 @@ public class EFRepo : IRepo
     {
         _context = (BGDBContext) context;
     }
-    public void AddUser(User userToAdd)
+
+    public Answer AddAnswer(int bingoCardID, Answer answerToAdd)
+    {
+        _context.Add(answerToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return answerToAdd;
+    }
+
+    public User AddUser(User userToAdd)
     {
         _context.Add(userToAdd);
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
+        return userToAdd;
     }
 
     public List<BingoCard> GetAllBingoCards()
@@ -26,5 +36,15 @@ public class EFRepo : IRepo
     {
         List<User> allUsers =_context.Users.Select(r => r).ToList();
         return allUsers;
+    }
+
+    public List<Answer> GetAnswersbyBingoCardId(int bingoCardID)
+    {
+        return _context.Answers.Where(r => r.BingoCardID == bingoCardID).ToList();
+    }
+
+    public List<BingoCard> GetBingoCardsbyUserId(int userID)
+    {
+        return _context.BingoCards.Where(r => r.UserID == userID).ToList();
     }
 }
