@@ -6,7 +6,4 @@ public interface IRepo
     void AddUser (User userToAdd);
 
     List<BingoCard> GetAllBingoCards();
-    void startGame();
-    void addPoints();
-    User GetUserByID(int usId);
 }
