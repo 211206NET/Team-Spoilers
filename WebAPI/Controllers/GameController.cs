@@ -9,6 +9,11 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class GameController : ControllerBase
 {
+    private IBL _bl;
+
+    public GameController(IBL bl){
+        _bl = bl;
+    }
     // GET: api/values
     [HttpGet]
     public IEnumerable<string> Get()
@@ -39,5 +44,6 @@ public class GameController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
+        _bl.DeleteGame(id);
     }
 }
