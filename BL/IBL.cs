@@ -21,4 +21,5 @@ public interface IBL
     void DeletePlayer(int id);
     BingoCard GetBingoCardById(int id);
     BingoCard AddBingoCard(BingoCard cardToAdd);
+    void AddAnswerToCard(int cId, Answer nAns);
 }

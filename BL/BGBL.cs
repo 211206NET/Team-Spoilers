@@ -97,4 +97,7 @@ public class BGBL :IBL
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         return _dl.AddBingoCard(cardToAdd);
     }
+    public void AddAnswerToCard(int cId, Answer nAns){
+        _dl.AddAnswerToCard(cId, nAns);
+    }
 }

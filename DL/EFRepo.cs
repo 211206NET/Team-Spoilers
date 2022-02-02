@@ -100,6 +100,13 @@ public class EFRepo : IRepo
         return cardToAdd;
     }
 
+    public void AddAnswerToCard(int cId, Answer nAns){
+        BingoCard selCard = _context.BingoCards.Single(c => c.ID == cId);
+        selCard.Answers.Add(nAns);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public object Update(object entity)
     {
         _context.Entry(entity).State = EntityState.Modified;
