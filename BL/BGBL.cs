@@ -103,4 +103,7 @@ public class BGBL :IBL
     public User GetUserById(int id){
         return _dl.GetUserById(id);
     }
+    public void AddCardToUser(int uId, BingoCard nCard){
+        _dl.AddCardToUser(uId, nCard);
+    }
 }

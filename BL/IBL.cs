@@ -23,4 +23,5 @@ public interface IBL
     BingoCard AddBingoCard(BingoCard cardToAdd);
     void AddAnswerToCard(int cId, Answer nAns);
     User GetUserById(int id);
+    void AddCardToUser(int uId, BingoCard nCard);
 }

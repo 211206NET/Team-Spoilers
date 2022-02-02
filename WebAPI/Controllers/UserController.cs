@@ -51,8 +51,9 @@ public class UserController : ControllerBase
     }
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put(int id, [FromBody]  BingoCard value)
     {
+        _bl.AddCardToUser(id, value);
     }
 
     // DELETE: api/values/5

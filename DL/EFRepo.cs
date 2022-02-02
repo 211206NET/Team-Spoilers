@@ -112,6 +112,13 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
     }
 
+    public void AddCardToUser(int uId, BingoCard nCard){
+        User selUser = _context.Users.Single(u => u.UserID == uId);
+        selUser.BingoCards.Add(nCard);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public object Update(object entity)
     {
         _context.Entry(entity).State = EntityState.Modified;
