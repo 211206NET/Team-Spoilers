@@ -100,4 +100,7 @@ public class BGBL :IBL
     public void AddAnswerToCard(int cId, Answer nAns){
         _dl.AddAnswerToCard(cId, nAns);
     }
+    public User GetUserById(int id){
+        return _dl.GetUserById(id);
+    }
 }

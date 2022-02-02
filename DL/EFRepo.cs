@@ -93,6 +93,11 @@ public class EFRepo : IRepo
         return allCards[0];
     }
 
+    public User GetUserById(int id){
+        List<User> allUsers = _context.Users.Where(u => u.UserID == id).ToList();
+        return allUsers[0];
+    }
+
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         _context.Add(cardToAdd);
         _context.SaveChanges();

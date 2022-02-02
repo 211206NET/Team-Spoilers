@@ -26,9 +26,9 @@ public class UserController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public User Get(int id)
     {
-        return "value";
+        return _bl.GetUserById(id);
     }
 
     [HttpGet("{username} {password}")]
