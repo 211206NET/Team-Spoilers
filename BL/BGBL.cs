@@ -71,4 +71,21 @@ public class BGBL :IBL
     {
         return _dl.GetAnswerbyId(answerID);
     }
+
+    public bool Login(string username, string password){
+        return _dl.Login(username, password);
+    }
+
+    public void DeleteSeries(string seriesToDelete){
+        _dl.DeleteSeries(seriesToDelete);
+    }
+    public void DeleteBingoCard(int id){
+        _dl.DeleteBingoCard(id);
+    }
+    public void DeleteGame(int id){
+        _dl.DeleteGame(id);
+    }
+    public void DeleteLeaderboard(int id){
+        _dl.DeleteLeaderboard(id);
+    }
 }

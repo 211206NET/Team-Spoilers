@@ -53,5 +53,6 @@ public class BingoCardController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
+        _bl.DeleteBingoCard(id);
     }
 }

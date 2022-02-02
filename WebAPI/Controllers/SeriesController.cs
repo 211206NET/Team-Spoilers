@@ -9,6 +9,12 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class SeriesController : ControllerBase
 {
+
+    private IBL _bl;
+
+    public SeriesController(IBL bl){
+        _bl = bl;
+    }
     // GET: api/values
     [HttpGet]
     public IEnumerable<string> Get()
@@ -37,7 +43,8 @@ public class SeriesController : ControllerBase
 
     // DELETE: api/values/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(string id)
     {
+        _bl.DeleteSeries(id);
     }
 }

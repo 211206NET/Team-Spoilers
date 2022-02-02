@@ -35,9 +35,23 @@ public class EFRepo : IRepo
     }
 
     public void DeleteUser(string userToDelete){
-        _context.Remove(_context.Users.Single(u => u.UserName == userToDelete));
-        _context.SaveChanges();
-        _context.ChangeTracker.Clear();
+        Delete(_context.Users.Single(u => u.UserName == userToDelete));
+    }
+
+    public void DeleteSeries(string seriesToDelete){
+        Delete(_context.Series.Single(u => u.Name == seriesToDelete));
+    }
+
+    public void DeleteBingoCard(int id){
+        Delete(_context.BingoCards.Single(u => u.ID == id));
+    }
+
+    public void DeleteGame(int id){
+        Delete(_context.Games.Single(u => u.GameID == id));
+    }
+
+    public void DeleteLeaderboard(int id){
+        Delete(_context.Leaderboards.Single(u => u.LeaderboardID == id));
     }
 
     public List<BingoCard> GetAllBingoCards()
@@ -77,5 +91,18 @@ public class EFRepo : IRepo
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
         return entity;
+    }
+
+    public bool Login(string username, string password){
+        bool doesExist = false;
+        List<User> allUsers = GetAllUsers();
+        foreach(User user in allUsers){
+            if(user.UserName == username){
+                if(user.Password == password){
+                    doesExist = true;
+                }
+            }
+        }
+        return doesExist;
     }
 }
