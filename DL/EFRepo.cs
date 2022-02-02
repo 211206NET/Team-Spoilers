@@ -78,4 +78,17 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
         return entity;
     }
+
+    public bool Login(string username, string password){
+        bool doesExist = false;
+        List<User> allUsers = GetAllUsers();
+        foreach(User user in allUsers){
+            if(user.UserName == username){
+                if(user.Password == password){
+                    doesExist = true;
+                }
+            }
+        }
+        return doesExist;
+    }
 }

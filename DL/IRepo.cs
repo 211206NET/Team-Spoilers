@@ -15,4 +15,5 @@ public interface IRepo
     object Update(object entity);
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
+    bool Login(string username, string password);
 }

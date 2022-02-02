@@ -71,4 +71,8 @@ public class BGBL :IBL
     {
         return _dl.GetAnswerbyId(answerID);
     }
+
+    public bool Login(string username, string password){
+        return _dl.Login(username, password);
+    }
 }

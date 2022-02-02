@@ -13,4 +13,5 @@ public interface IBL
     List<Player> GetPlayersByUserId(int userID);
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
+    bool Login(string username, string password);
 }

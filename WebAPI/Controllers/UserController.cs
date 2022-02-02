@@ -31,6 +31,16 @@ public class UserController : ControllerBase
         return "value";
     }
 
+    [HttpGet("{username} {password}")]
+    public ActionResult UserLogin(string username, string password){
+        if(_bl.Login(username, password)){
+            return Ok("Welcome!");
+        }
+        else{
+            return BadRequest("I don't know you.");
+        }
+    }
+
     // POST: api/values
     [HttpPost]
     //For the moment until i get login and sign up working
