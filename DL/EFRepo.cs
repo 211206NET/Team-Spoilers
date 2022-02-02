@@ -93,6 +93,13 @@ public class EFRepo : IRepo
         return allCards[0];
     }
 
+    public BingoCard AddBingoCard(BingoCard cardToAdd){
+        _context.Add(cardToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return cardToAdd;
+    }
+
     public object Update(object entity)
     {
         _context.Entry(entity).State = EntityState.Modified;

@@ -22,4 +22,5 @@ public interface IRepo
     void DeleteGame(int id);
     void DeleteLeaderboard(int id);
     void DeletePlayer(int id);
+    BingoCard AddBingoCard(BingoCard cardToAdd);
 }

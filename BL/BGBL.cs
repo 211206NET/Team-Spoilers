@@ -94,4 +94,7 @@ public class BGBL :IBL
     public BingoCard GetBingoCardById(int id){
         return _dl.GetBingoCardById(id);
     }
+    public BingoCard AddBingoCard(BingoCard cardToAdd){
+        return _dl.AddBingoCard(cardToAdd);
+    }
 }

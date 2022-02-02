@@ -20,4 +20,5 @@ public interface IBL
     void DeleteLeaderboard(int id);
     void DeletePlayer(int id);
     BingoCard GetBingoCardById(int id);
+    BingoCard AddBingoCard(BingoCard cardToAdd);
 }

@@ -39,8 +39,9 @@ public class BingoCardController : ControllerBase
 
     // POST: api/values
     [HttpPost]
-    public void Post([FromBody] string value)
+    public void Post([FromBody] BingoCard value)
     {
+        _bl.AddBingoCard(value);
     }
 
     // PUT: api/values/5
