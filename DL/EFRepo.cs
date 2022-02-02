@@ -35,15 +35,15 @@ public class EFRepo : IRepo
     }
 
     public void DeleteUser(string userToDelete){
-        _context.Remove(_context.Users.Single(u => u.UserName == userToDelete));
-        _context.SaveChanges();
-        _context.ChangeTracker.Clear();
+        Delete(_context.Users.Single(u => u.UserName == userToDelete));
     }
 
     public void DeleteSeries(string seriesToDelete){
-        _context.Remove(_context.Series.Single(u => u.Name == seriesToDelete));
-        _context.SaveChanges();
-        _context.ChangeTracker.Clear();
+        Delete(_context.Series.Single(u => u.Name == seriesToDelete));
+    }
+
+    public void DeleteBingoCard(int id){
+        Delete(_context.BingoCards.Single(u => u.ID == id));
     }
 
     public List<BingoCard> GetAllBingoCards()

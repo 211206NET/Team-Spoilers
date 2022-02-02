@@ -79,4 +79,7 @@ public class BGBL :IBL
     public void DeleteSeries(string seriesToDelete){
         _dl.DeleteSeries(seriesToDelete);
     }
+    public void DeleteBingoCard(int id){
+        _dl.DeleteBingoCard(id);
+    }
 }

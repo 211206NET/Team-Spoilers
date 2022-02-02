@@ -17,4 +17,5 @@ public interface IRepo
     Answer GetAnswerbyId(int answerID);
     bool Login(string username, string password);
     void DeleteSeries(string seriesToDelete);
+    void DeleteBingoCard(int id);
 }
