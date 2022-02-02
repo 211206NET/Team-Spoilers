@@ -9,6 +9,11 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class LeaderboardController : ControllerBase
 {
+    private IBL _bl;
+
+    public LeaderboardController(IBL bl){
+        _bl = bl;
+    }
     // GET: api/values
     [HttpGet]
     public IEnumerable<string> Get()
