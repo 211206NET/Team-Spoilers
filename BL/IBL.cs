@@ -16,4 +16,5 @@ public interface IBL
     bool Login(string username, string password);
     void DeleteSeries(string seriesToDelete);
     void DeleteBingoCard(int id);
+    void DeleteGame(int id);
 }
