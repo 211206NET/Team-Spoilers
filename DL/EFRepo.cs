@@ -54,6 +54,10 @@ public class EFRepo : IRepo
         Delete(_context.Leaderboards.Single(u => u.LeaderboardID == id));
     }
 
+    public void DeletePlayer(int id){
+        Delete(_context.Players.Single(u => u.UserID == id));
+    }
+
     public List<BingoCard> GetAllBingoCards()
     {
         throw new NotImplementedException();
