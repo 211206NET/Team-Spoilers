@@ -50,6 +50,10 @@ public class EFRepo : IRepo
         Delete(_context.Games.Single(u => u.GameID == id));
     }
 
+    public void DeleteLeaderboard(int id){
+        Delete(_context.Leaderboards.Single(u => u.LeaderboardID == id));
+    }
+
     public List<BingoCard> GetAllBingoCards()
     {
         throw new NotImplementedException();

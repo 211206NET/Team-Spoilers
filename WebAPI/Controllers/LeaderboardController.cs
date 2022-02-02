@@ -44,5 +44,6 @@ public class LeaderboardController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
+        _bl.DeleteLeaderboard(id);
     }
 }

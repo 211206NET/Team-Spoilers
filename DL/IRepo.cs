@@ -19,4 +19,5 @@ public interface IRepo
     void DeleteSeries(string seriesToDelete);
     void DeleteBingoCard(int id);
     void DeleteGame(int id);
+    void DeleteLeaderboard(int id);
 }

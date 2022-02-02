@@ -85,4 +85,7 @@ public class BGBL :IBL
     public void DeleteGame(int id){
         _dl.DeleteGame(id);
     }
+    public void DeleteLeaderboard(int id){
+        _dl.DeleteLeaderboard(id);
+    }
 }
