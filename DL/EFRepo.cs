@@ -40,6 +40,12 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
     }
 
+    public void DeleteSeries(string seriesToDelete){
+        _context.Remove(_context.Series.Single(u => u.Name == seriesToDelete));
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public List<BingoCard> GetAllBingoCards()
     {
         throw new NotImplementedException();

@@ -14,4 +14,5 @@ public interface IBL
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
     bool Login(string username, string password);
+    void DeleteSeries(string seriesToDelete);
 }

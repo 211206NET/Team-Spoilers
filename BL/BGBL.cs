@@ -75,4 +75,8 @@ public class BGBL :IBL
     public bool Login(string username, string password){
         return _dl.Login(username, password);
     }
+
+    public void DeleteSeries(string seriesToDelete){
+        _dl.DeleteSeries(seriesToDelete);
+    }
 }
