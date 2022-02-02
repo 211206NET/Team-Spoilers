@@ -19,4 +19,5 @@ public interface IBL
     void DeleteGame(int id);
     void DeleteLeaderboard(int id);
     void DeletePlayer(int id);
+    BingoCard GetBingoCardById(int id);
 }

@@ -25,9 +25,9 @@ public class BingoCardController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public BingoCard Get(int id)
     {
-        return "value";
+        return _bl.GetBingoCardById(id);
     }
 
     [HttpGet("Get Bingo Cards by{UserID}")]

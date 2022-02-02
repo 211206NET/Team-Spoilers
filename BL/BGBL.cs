@@ -91,4 +91,7 @@ public class BGBL :IBL
     public void DeletePlayer(int id){
         _dl.DeletePlayer(id);
     }
+    public BingoCard GetBingoCardById(int id){
+        return _dl.GetBingoCardById(id);
+    }
 }

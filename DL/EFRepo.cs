@@ -88,6 +88,10 @@ public class EFRepo : IRepo
     public List<Player> GetPlayersByUserId(int userID){
         return _context.Players.Where(r => r.UserID == userID).ToList();
     }
+    public BingoCard GetBingoCardById(int id){
+        List<BingoCard> allCards = _context.BingoCards.Where(b => b.ID == id).ToList();
+        return allCards[0];
+    }
 
     public object Update(object entity)
     {
