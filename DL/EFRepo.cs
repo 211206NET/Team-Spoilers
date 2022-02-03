@@ -119,6 +119,13 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
     }
 
+    public Player AddPlayer(Player playerToAdd){
+        _context.Add(playerToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return playerToAdd;
+    }
+
     public object Update(object entity)
     {
         _context.Entry(entity).State = EntityState.Modified;

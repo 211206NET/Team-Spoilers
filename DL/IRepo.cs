@@ -26,4 +26,5 @@ public interface IRepo
     BingoCard AddBingoCard(BingoCard cardToAdd);
     void AddAnswerToCard(int cId, Answer nAns);
     void AddCardToUser(int uId, BingoCard nCard);
+    Player AddPlayer(Player playerToAdd);
 }

@@ -106,4 +106,10 @@ public class BGBL :IBL
     public void AddCardToUser(int uId, BingoCard nCard){
         _dl.AddCardToUser(uId, nCard);
     }
+    public Player AddPlayer(Player playerToAdd){
+        return _dl.AddPlayer(playerToAdd);
+    }
+    public Player UpdatePlayer(int id, int master){
+        return (Player) _dl.Update(master);
+    }
 }
