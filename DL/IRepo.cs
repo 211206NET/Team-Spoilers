@@ -14,6 +14,10 @@ public interface IRepo
     List<Player> GetPlayersByUserId(int userID);
     BingoCard GetBingoCardById(int id);
     User GetUserById(int id);
+    List<Series> GetAllSeries();
+    Series GetSeriesById(int id);
+    Series GetSeriesByIMDbId(string id);
+    Series GetSeriesByTitle(string title);
     object Update(object entity);
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
@@ -24,6 +28,7 @@ public interface IRepo
     void DeleteLeaderboard(int id);
     void DeletePlayer(int id);
     BingoCard AddBingoCard(BingoCard cardToAdd);
+    Series AddSeries(Series seriesToAdd);
     void AddAnswerToCard(int cId, Answer nAns);
     void AddCardToUser(int uId, BingoCard nCard);
     Player AddPlayer(Player playerToAdd);

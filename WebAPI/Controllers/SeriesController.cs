@@ -17,22 +17,33 @@ public class SeriesController : ControllerBase
     }
     // GET: api/values
     [HttpGet]
-    public IEnumerable<string> Get()
+    public List<Series> Get()
     {
-        return new string[] { "value1", "value2" };
+        return _bl.GetAllSeries();
     }
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Series Get(int id)
     {
-        return "value";
+        return _bl.GetSeriesById(id);
+    }
+
+    [HttpGet("{imdbid}")]
+    public Series Get(string imdbid){
+        return _bl.GetSeriesByIMDbId(imdbid);
+    }
+
+    [HttpGet("{title}")]
+    public Series GetBySeries(string title){
+        return _bl.GetSeriesByTitle(title);
     }
 
     // POST: api/values
     [HttpPost]
-    public void Post([FromBody] string value)
+    public void Post([FromBody] Series value)
     {
+        _bl.AddSeries(value);
     }
 
     // PUT: api/values/5

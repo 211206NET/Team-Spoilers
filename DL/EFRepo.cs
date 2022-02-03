@@ -98,11 +98,38 @@ public class EFRepo : IRepo
         return allUsers[0];
     }
 
+    public List<Series> GetAllSeries(){
+        List<Series> allSeries = _context.Series.Select(s => s).ToList();
+        return allSeries;
+    }
+
+    public Series GetSeriesById(int id){
+        List<Series> selSeries = _context.Series.Where(s => s.SeriesID == id).ToList();
+        return selSeries[0];
+    }
+
+    public Series GetSeriesByIMDbId(string id){
+        List<Series> selSeries = _context.Series.Where(s => s.IMDbID == id).ToList();
+        return selSeries[0];
+    }
+
+    public Series GetSeriesByTitle(string title){
+        List<Series> selSeries = _context.Series.Where(s => s.Name == title).ToList();
+        return selSeries[0];
+    }
+
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         _context.Add(cardToAdd);
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
         return cardToAdd;
+    }
+
+    public Series AddSeries(Series seriesToAdd){
+        _context.Add(seriesToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return seriesToAdd;
     }
 
     public void AddAnswerToCard(int cId, Answer nAns){
