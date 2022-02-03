@@ -113,7 +113,7 @@ public class EFRepo : IRepo
         return selSeries[0];
     }
 
-    public Series GetSeriesByIMDbId(string id){
+    public Series GetSeriesByIMDbId(int id){
         List<Series> selSeries = _context.Series.Where(s => s.IMDbID == id).ToList();
         return selSeries[0];
     }

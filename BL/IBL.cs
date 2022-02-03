@@ -28,7 +28,7 @@ public interface IBL
     Player UpdatePlayer(int id, int master);
     List<Series> GetAllSeries();
     Series GetSeriesById(int id);
-    Series GetSeriesByIMDbId(string id);
+    Series GetSeriesByIMDbId(int id);
     Series GetSeriesByTitle(string title);
     Series AddSeries(Series seriesToAdd);
     Series UpdateSeries(int id, string imdb);

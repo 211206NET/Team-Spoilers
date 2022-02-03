@@ -118,7 +118,7 @@ public class BGBL :IBL
     public Series GetSeriesById(int id){
         return _dl.GetSeriesById(id);
     }
-    public Series GetSeriesByIMDbId(string id){
+    public Series GetSeriesByIMDbId(int id){
         return _dl.GetSeriesByIMDbId(id);
     }
     public Series GetSeriesByTitle(string title){
