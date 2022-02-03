@@ -37,4 +37,5 @@ public interface IBL
     Game GetGameById(int id);
     Leaderboard GetLeaderboardById(int id);
     Game UpdateGame(int id, int winner);
+    void AddPlayerToLeaderboard(int lId, int pId);
 }

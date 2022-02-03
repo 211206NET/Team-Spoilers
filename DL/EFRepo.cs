@@ -146,6 +146,13 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
     }
 
+    public void AddPlayerToLeaderboard(int lId, int pId){
+        Leaderboard selLeader = _context.Leaderboards.Single(l => l.LeaderboardID == lId);
+        selLeader.PlayerID = pId;
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     public Player AddPlayer(Player playerToAdd){
         _context.Add(playerToAdd);
         _context.SaveChanges();

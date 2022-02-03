@@ -37,8 +37,9 @@ public class LeaderboardController : ControllerBase
 
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put(int id, [FromBody] int value)
     {
+        _bl.AddPlayerToLeaderboard(id, value);
     }
 
     // DELETE: api/values/5

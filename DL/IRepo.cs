@@ -31,6 +31,7 @@ public interface IRepo
     Series AddSeries(Series seriesToAdd);
     void AddAnswerToCard(int cId, Answer nAns);
     void AddCardToUser(int uId, BingoCard nCard);
+    void AddPlayerToLeaderboard(int lId, int pId);
     Player AddPlayer(Player playerToAdd);
     Game AddGame(Game gameToAdd);
     Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
