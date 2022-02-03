@@ -30,7 +30,7 @@ public class SeriesController : ControllerBase
     }
 
     [HttpGet("{imdbid}")]
-    public Series Get(string imdbid){
+    public Series GetIMDb(int imdbid){
         return _bl.GetSeriesByIMDbId(imdbid);
     }
 
@@ -48,7 +48,7 @@ public class SeriesController : ControllerBase
 
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string imdbid)
+    public void Put(int id, [FromBody] int imdbid)
     {
         _bl.UpdateSeries(id, imdbid);
     }

@@ -127,7 +127,7 @@ public class BGBL :IBL
     public Series AddSeries(Series seriesToAdd){
         return _dl.AddSeries(seriesToAdd);
     }
-    public Series UpdateSeries(int id, string imdb){
+    public Series UpdateSeries(int id, int imdb){
         return (Series) _dl.Update(imdb);
     }
     public Game AddGame(Game gameToAdd){
