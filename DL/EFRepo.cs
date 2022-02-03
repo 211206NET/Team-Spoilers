@@ -88,6 +88,43 @@ public class EFRepo : IRepo
     public List<Player> GetPlayersByUserId(int userID){
         return _context.Players.Where(r => r.UserID == userID).ToList();
     }
+    public BingoCard GetBingoCardById(int id){
+        List<BingoCard> allCards = _context.BingoCards.Where(b => b.ID == id).ToList();
+        return allCards[0];
+    }
+
+    public User GetUserById(int id){
+        List<User> allUsers = _context.Users.Where(u => u.UserID == id).ToList();
+        return allUsers[0];
+    }
+
+    public BingoCard AddBingoCard(BingoCard cardToAdd){
+        _context.Add(cardToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return cardToAdd;
+    }
+
+    public void AddAnswerToCard(int cId, Answer nAns){
+        BingoCard selCard = _context.BingoCards.Single(c => c.ID == cId);
+        selCard.Answers.Add(nAns);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
+    public void AddCardToUser(int uId, BingoCard nCard){
+        User selUser = _context.Users.Single(u => u.UserID == uId);
+        selUser.BingoCards.Add(nCard);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
+    public Player AddPlayer(Player playerToAdd){
+        _context.Add(playerToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return playerToAdd;
+    }
 
     public object Update(object entity)
     {

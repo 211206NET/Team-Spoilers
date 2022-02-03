@@ -91,4 +91,25 @@ public class BGBL :IBL
     public void DeletePlayer(int id){
         _dl.DeletePlayer(id);
     }
+    public BingoCard GetBingoCardById(int id){
+        return _dl.GetBingoCardById(id);
+    }
+    public BingoCard AddBingoCard(BingoCard cardToAdd){
+        return _dl.AddBingoCard(cardToAdd);
+    }
+    public void AddAnswerToCard(int cId, Answer nAns){
+        _dl.AddAnswerToCard(cId, nAns);
+    }
+    public User GetUserById(int id){
+        return _dl.GetUserById(id);
+    }
+    public void AddCardToUser(int uId, BingoCard nCard){
+        _dl.AddCardToUser(uId, nCard);
+    }
+    public Player AddPlayer(Player playerToAdd){
+        return _dl.AddPlayer(playerToAdd);
+    }
+    public Player UpdatePlayer(int id, int master){
+        return (Player) _dl.Update(master);
+    }
 }

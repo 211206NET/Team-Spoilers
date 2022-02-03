@@ -19,4 +19,11 @@ public interface IBL
     void DeleteGame(int id);
     void DeleteLeaderboard(int id);
     void DeletePlayer(int id);
+    BingoCard GetBingoCardById(int id);
+    BingoCard AddBingoCard(BingoCard cardToAdd);
+    void AddAnswerToCard(int cId, Answer nAns);
+    User GetUserById(int id);
+    void AddCardToUser(int uId, BingoCard nCard);
+    Player AddPlayer(Player playerToAdd);
+    Player UpdatePlayer(int id, int master);
 }

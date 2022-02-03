@@ -17,17 +17,17 @@ public class BingoCardController : ControllerBase
     }
 
     // GET: api/values
-    [HttpGet]
-    public IEnumerable<string> Get()
-    {
-        return new string[] { "value1", "value2" };
-    }
+    // [HttpGet]
+    // public IEnumerable<string> Get()
+    // {
+    //     return new string[] { "value1", "value2" };
+    // }
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public BingoCard Get(int id)
     {
-        return "value";
+        return _bl.GetBingoCardById(id);
     }
 
     [HttpGet("Get Bingo Cards by{UserID}")]
@@ -39,14 +39,16 @@ public class BingoCardController : ControllerBase
 
     // POST: api/values
     [HttpPost]
-    public void Post([FromBody] string value)
+    public void Post([FromBody] BingoCard value)
     {
+        _bl.AddBingoCard(value);
     }
 
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put(int id, [FromBody] Answer value)
     {
+        _bl.AddAnswerToCard(id, value);
     }
 
     // DELETE: api/values/5
