@@ -24,9 +24,19 @@ public class SeriesController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Series Get(int id)
     {
-        return "value";
+        return _bl.GetSeriesById(id);
+    }
+
+    [HttpGet("{imdbid}")]
+    public Series Get(string imdbid){
+        return _bl.GetSeriesByIMDbId(imdbid);
+    }
+
+    [HttpGet("{title}")]
+    public Series GetBySeries(string title){
+        return _bl.GetSeriesByTitle(title);
     }
 
     // POST: api/values

@@ -115,4 +115,13 @@ public class BGBL :IBL
     public List<Series> GetAllSeries(){
         return _dl.GetAllSeries();
     }
+    public Series GetSeriesById(int id){
+        return _dl.GetSeriesById(id);
+    }
+    public Series GetSeriesByIMDbId(string id){
+        return _dl.GetSeriesByIMDbId(id);
+    }
+    public Series GetSeriesByTitle(string title){
+        return _dl.GetSeriesByTitle(title);
+    }
 }

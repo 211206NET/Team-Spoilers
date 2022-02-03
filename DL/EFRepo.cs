@@ -103,6 +103,21 @@ public class EFRepo : IRepo
         return allSeries;
     }
 
+    public Series GetSeriesById(int id){
+        List<Series> selSeries = _context.Series.Where(s => s.SeriesID == id).ToList();
+        return selSeries[0];
+    }
+
+    public Series GetSeriesByIMDbId(string id){
+        List<Series> selSeries = _context.Series.Where(s => s.IMDbID == id).ToList();
+        return selSeries[0];
+    }
+
+    public Series GetSeriesByTitle(string title){
+        List<Series> selSeries = _context.Series.Where(s => s.Name == title).ToList();
+        return selSeries[0];
+    }
+
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         _context.Add(cardToAdd);
         _context.SaveChanges();
