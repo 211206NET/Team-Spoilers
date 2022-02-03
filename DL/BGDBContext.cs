@@ -14,5 +14,6 @@ public class BGDBContext : DbContext
     public DbSet<Player> Players { get; set; }
     public DbSet<Series> Series { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<IMDb> IMDbs { get; set; }
 
 }
