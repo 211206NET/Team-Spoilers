@@ -16,7 +16,7 @@ public interface IRepo
     User GetUserById(int id);
     List<Series> GetAllSeries();
     Series GetSeriesById(int id);
-    Series GetSeriesByIMDbId(string id);
+    Series GetSeriesByIMDbId(int id);
     Series GetSeriesByTitle(string title);
     object Update(object entity);
     void Delete(object entity);
