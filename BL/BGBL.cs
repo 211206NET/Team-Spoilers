@@ -145,4 +145,10 @@ public class BGBL :IBL
     public Game UpdateGame(int id, int winner){
         return (Game) _dl.Update(winner);
     }
+    public void AddPlayerToLeaderboard(int lId, int pId){
+        _dl.AddPlayerToLeaderboard(lId, pId);
+    }
+    public List<Game> GetAllGames(){
+        return _dl.GetAllGames();
+    }
 }

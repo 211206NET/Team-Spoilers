@@ -16,9 +16,9 @@ public class GameController : ControllerBase
     }
     // GET: api/values
     [HttpGet]
-    public IEnumerable<string> Get()
+    public List<Game> Get()
     {
-        return new string[] { "value1", "value2" };
+        return _bl.GetAllGames();
     }
 
     // GET: api/values/5

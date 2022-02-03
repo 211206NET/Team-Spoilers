@@ -69,6 +69,11 @@ public class EFRepo : IRepo
         return allUsers;
     }
 
+    public List<Game> GetAllGames(){
+        List<Game> allGames = _context.Games.Select(g => g).ToList();
+        return allGames;
+    }
+
     public Answer GetAnswerbyId(int answerID)
     {
         List<Answer> answer = _context.Answers.Where(r => r.ID == answerID).ToList();
@@ -142,6 +147,13 @@ public class EFRepo : IRepo
     public void AddCardToUser(int uId, BingoCard nCard){
         User selUser = _context.Users.Single(u => u.UserID == uId);
         selUser.BingoCards.Add(nCard);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
+    public void AddPlayerToLeaderboard(int lId, int pId){
+        Leaderboard selLeader = _context.Leaderboards.Single(l => l.LeaderboardID == lId);
+        selLeader.PlayerID = pId;
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
     }
