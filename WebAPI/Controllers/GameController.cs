@@ -30,8 +30,9 @@ public class GameController : ControllerBase
 
     // POST: api/values
     [HttpPost]
-    public void Post([FromBody] string value)
+    public void Post([FromBody] Game value)
     {
+        _bl.AddGame(value);
     }
 
     // PUT: api/values/5

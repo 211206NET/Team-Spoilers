@@ -32,4 +32,6 @@ public interface IBL
     Series GetSeriesByTitle(string title);
     Series AddSeries(Series seriesToAdd);
     Series UpdateSeries(int id, string imdb);
+    Game AddGame(Game gameToAdd);
+    Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
 }

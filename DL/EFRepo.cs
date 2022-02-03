@@ -153,6 +153,20 @@ public class EFRepo : IRepo
         return playerToAdd;
     }
 
+    public Game AddGame(Game gameToAdd){
+        _context.Add(gameToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return gameToAdd;
+    }
+
+    public Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd){
+        _context.Add(leaderboardToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return leaderboardToAdd;
+    }
+
     public object Update(object entity)
     {
         _context.Entry(entity).State = EntityState.Modified;

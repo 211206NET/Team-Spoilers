@@ -130,4 +130,10 @@ public class BGBL :IBL
     public Series UpdateSeries(int id, string imdb){
         return (Series) _dl.Update(imdb);
     }
+    public Game AddGame(Game gameToAdd){
+        return _dl.AddGame(gameToAdd);
+    }
+    public Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd){
+        return _dl.AddLeaderboard(leaderboardToAdd);
+    }
 }
