@@ -32,4 +32,6 @@ public interface IRepo
     void AddAnswerToCard(int cId, Answer nAns);
     void AddCardToUser(int uId, BingoCard nCard);
     Player AddPlayer(Player playerToAdd);
+    Game AddGame(Game gameToAdd);
+    Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
 }

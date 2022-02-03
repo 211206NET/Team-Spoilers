@@ -30,8 +30,9 @@ public class LeaderboardController : ControllerBase
 
     // POST: api/values
     [HttpPost]
-    public void Post([FromBody] string value)
+    public void Post([FromBody] Leaderboard value)
     {
+        _bl.AddLeaderboard(value);
     }
 
     // PUT: api/values/5
