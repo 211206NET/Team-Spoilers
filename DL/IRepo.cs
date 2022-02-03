@@ -7,7 +7,7 @@ public interface IRepo
 
     void DeleteUser(string userToDelete);
     List<BingoCard> GetAllBingoCards();
-
+    List<Game> GetAllGames();
     List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
     Answer AddAnswer (Answer answerToAdd);
     List<BingoCard> GetBingoCardsbyUserId(int userID);

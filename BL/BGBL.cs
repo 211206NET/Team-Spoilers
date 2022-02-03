@@ -148,4 +148,7 @@ public class BGBL :IBL
     public void AddPlayerToLeaderboard(int lId, int pId){
         _dl.AddPlayerToLeaderboard(lId, pId);
     }
+    public List<Game> GetAllGames(){
+        return _dl.GetAllGames();
+    }
 }

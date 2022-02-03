@@ -69,6 +69,11 @@ public class EFRepo : IRepo
         return allUsers;
     }
 
+    public List<Game> GetAllGames(){
+        List<Game> allGames = _context.Games.Select(g => g).ToList();
+        return allGames;
+    }
+
     public Answer GetAnswerbyId(int answerID)
     {
         List<Answer> answer = _context.Answers.Where(r => r.ID == answerID).ToList();
