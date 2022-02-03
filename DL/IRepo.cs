@@ -34,4 +34,6 @@ public interface IRepo
     Player AddPlayer(Player playerToAdd);
     Game AddGame(Game gameToAdd);
     Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
+    Game GetGameById(int id);
+    Leaderboard GetLeaderboardById(int id);
 }

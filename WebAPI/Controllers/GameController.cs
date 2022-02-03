@@ -23,9 +23,9 @@ public class GameController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Game Get(int id)
     {
-        return "value";
+        return _bl.GetGameById(id);
     }
 
     // POST: api/values

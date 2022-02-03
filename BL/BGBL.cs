@@ -136,4 +136,10 @@ public class BGBL :IBL
     public Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd){
         return _dl.AddLeaderboard(leaderboardToAdd);
     }
+    public Game GetGameById(int id){
+        return _dl.GetGameById(id);
+    }
+    public Leaderboard GetLeaderboardById(int id){
+        return _dl.GetLeaderboardById(id);
+    }
 }
