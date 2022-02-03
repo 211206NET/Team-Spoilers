@@ -166,6 +166,14 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
         return leaderboardToAdd;
     }
+    public Game GetGameById(int id){
+        List<Game> selGame = _context.Games.Where(g => g.GameID == id).ToList();
+        return selGame[0];
+    }
+    public Leaderboard GetLeaderboardById(int id){
+        List<Leaderboard> selLeaderboard = _context.Leaderboards.Where(l => l.LeaderboardID == id).ToList();
+        return selLeaderboard[0];
+    }
 
     public object Update(object entity)
     {

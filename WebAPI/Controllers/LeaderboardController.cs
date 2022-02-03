@@ -23,9 +23,9 @@ public class LeaderboardController : ControllerBase
 
     // GET: api/values/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Leaderboard Get(int id)
     {
-        return "value";
+        return _bl.GetLeaderboardById(id);
     }
 
     // POST: api/values
