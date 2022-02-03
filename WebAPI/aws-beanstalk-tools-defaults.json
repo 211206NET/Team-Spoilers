@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-2",
+    "configuration" : "Release",
+    "framework"     : "net6.0",
+    "self-contained" : true,
+    "application"    : "BGWebAPI",
+    "environment"    : "BGWebAPI-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.2.9 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "bgwebapi-prod",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "bgp2",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
