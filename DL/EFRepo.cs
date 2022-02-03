@@ -125,6 +125,13 @@ public class EFRepo : IRepo
         return cardToAdd;
     }
 
+    public Series AddSeries(Series seriesToAdd){
+        _context.Add(seriesToAdd);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+        return seriesToAdd;
+    }
+
     public void AddAnswerToCard(int cId, Answer nAns){
         BingoCard selCard = _context.BingoCards.Single(c => c.ID == cId);
         selCard.Answers.Add(nAns);

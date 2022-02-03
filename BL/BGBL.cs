@@ -124,4 +124,7 @@ public class BGBL :IBL
     public Series GetSeriesByTitle(string title){
         return _dl.GetSeriesByTitle(title);
     }
+    public Series AddSeries(Series seriesToAdd){
+        return _dl.AddSeries(seriesToAdd);
+    }
 }
