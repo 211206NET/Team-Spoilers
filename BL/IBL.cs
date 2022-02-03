@@ -26,4 +26,5 @@ public interface IBL
     void AddCardToUser(int uId, BingoCard nCard);
     Player AddPlayer(Player playerToAdd);
     Player UpdatePlayer(int id, int master);
+    List<Series> GetAllSeries();
 }

@@ -112,4 +112,7 @@ public class BGBL :IBL
     public Player UpdatePlayer(int id, int master){
         return (Player) _dl.Update(master);
     }
+    public List<Series> GetAllSeries(){
+        return _dl.GetAllSeries();
+    }
 }

@@ -98,6 +98,11 @@ public class EFRepo : IRepo
         return allUsers[0];
     }
 
+    public List<Series> GetAllSeries(){
+        List<Series> allSeries = _context.Series.Select(s => s).ToList();
+        return allSeries;
+    }
+
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         _context.Add(cardToAdd);
         _context.SaveChanges();

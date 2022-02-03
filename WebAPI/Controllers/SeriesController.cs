@@ -17,9 +17,9 @@ public class SeriesController : ControllerBase
     }
     // GET: api/values
     [HttpGet]
-    public IEnumerable<string> Get()
+    public List<Series> Get()
     {
-        return new string[] { "value1", "value2" };
+        return _bl.GetAllSeries();
     }
 
     // GET: api/values/5

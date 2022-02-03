@@ -14,6 +14,7 @@ public interface IRepo
     List<Player> GetPlayersByUserId(int userID);
     BingoCard GetBingoCardById(int id);
     User GetUserById(int id);
+    List<Series> GetAllSeries();
     object Update(object entity);
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
