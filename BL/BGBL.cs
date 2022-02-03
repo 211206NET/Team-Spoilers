@@ -142,4 +142,7 @@ public class BGBL :IBL
     public Leaderboard GetLeaderboardById(int id){
         return _dl.GetLeaderboardById(id);
     }
+    public Game UpdateGame(int id, int winner){
+        return (Game) _dl.Update(winner);
+    }
 }

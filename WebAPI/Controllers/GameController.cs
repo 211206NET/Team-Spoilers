@@ -37,8 +37,9 @@ public class GameController : ControllerBase
 
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put(int id, [FromBody] int winner)
     {
+        _bl.UpdateGame(id, winner);
     }
 
     // DELETE: api/values/5
