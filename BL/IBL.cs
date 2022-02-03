@@ -31,4 +31,5 @@ public interface IBL
     Series GetSeriesByIMDbId(string id);
     Series GetSeriesByTitle(string title);
     Series AddSeries(Series seriesToAdd);
+    Series UpdateSeries(int id, string imdb);
 }

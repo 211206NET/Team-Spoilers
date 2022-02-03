@@ -127,4 +127,7 @@ public class BGBL :IBL
     public Series AddSeries(Series seriesToAdd){
         return _dl.AddSeries(seriesToAdd);
     }
+    public Series UpdateSeries(int id, string imdb){
+        return (Series) _dl.Update(imdb);
+    }
 }
