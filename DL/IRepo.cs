@@ -29,7 +29,7 @@ public interface IRepo
     void DeletePlayer(int id);
     BingoCard AddBingoCard(BingoCard cardToAdd);
     Series AddSeries(Series seriesToAdd);
-    void AddAnswerToCard(int cId, Answer nAns);
+    BingoCard AddAnswerToCard(int cId, Answer nAns);
     void AddCardToUser(int uId, BingoCard nCard);
     void AddPlayerToLeaderboard(int lId, int pId);
     Player AddPlayer(Player playerToAdd);
@@ -37,4 +37,5 @@ public interface IRepo
     Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
     Game GetGameById(int id);
     Leaderboard GetLeaderboardById(int id);
+    //void Update(int answerID, bool isMarked);
 }

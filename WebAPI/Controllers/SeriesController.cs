@@ -29,10 +29,10 @@ public class SeriesController : ControllerBase
         return _bl.GetSeriesById(id);
     }
 
-    [HttpGet("{imdbid}")]
-    public Series GetIMDb(int imdbid){
-        return _bl.GetSeriesByIMDbId(imdbid);
-    }
+    // [HttpGet("{imdbid}")]
+    // public Series GetIMDb(int imdbid){
+    //     return _bl.GetSeriesByIMDbId(imdbid);
+    // }
 
     [HttpGet("{title}")]
     public Series GetBySeries(string title){

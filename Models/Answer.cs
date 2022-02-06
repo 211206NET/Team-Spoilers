@@ -8,5 +8,5 @@ public class Answer{
     public int BingoCardID { get; set; }
     public string block { get; set; }
 
-    public bool isMarked { get; set; }
+    public bool isMarked { get; set; } = false;
 }

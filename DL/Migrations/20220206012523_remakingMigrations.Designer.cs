@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DL.Migrations
 {
     [DbContext(typeof(BGDBContext))]
-    [Migration("20220201032056_answerAddedMigration")]
-    partial class answerAddedMigration
+    [Migration("20220206012523_remakingMigrations")]
+    partial class remakingMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,7 +84,6 @@ namespace DL.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Question")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("SeriesID")
@@ -96,6 +95,31 @@ namespace DL.Migrations
                     b.HasKey("GameID");
 
                     b.ToTable("Games");
+                });
+
+            modelBuilder.Entity("Models.IMDb", b =>
+                {
+                    b.Property<int>("IMDbID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IMDbID"));
+
+                    b.Property<int>("APIID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.HasKey("IMDbID");
+
+                    b.ToTable("IMDbs");
                 });
 
             modelBuilder.Entity("Models.Leaderboard", b =>
@@ -145,18 +169,12 @@ namespace DL.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SeriesID"));
 
                     b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("IMDbID")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("LeaderboardID")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("SeriesID");
@@ -173,11 +191,9 @@ namespace DL.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserID"));
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("UserID");

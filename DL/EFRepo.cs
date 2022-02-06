@@ -137,11 +137,12 @@ public class EFRepo : IRepo
         return seriesToAdd;
     }
 
-    public void AddAnswerToCard(int cId, Answer nAns){
+    public BingoCard AddAnswerToCard(int cId, Answer nAns){
         BingoCard selCard = _context.BingoCards.Single(c => c.ID == cId);
         selCard.Answers.Add(nAns);
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
+        return selCard;
     }
 
     public void AddCardToUser(int uId, BingoCard nCard){
@@ -194,7 +195,14 @@ public class EFRepo : IRepo
         _context.ChangeTracker.Clear();
         return entity;
     }
-
+//public void Update(int answerID, bool isMarked)
+//    {
+//        //Update(_context.Answers.Where(a => a.ID == answerID).ToList());
+//        //Delete(_context.Users.Single(u => u.UserName == userToDelete));
+//        _context.Update();
+//        _context.SaveChanges();
+//        _context.ChangeTracker.Clear();
+//    }
     public bool Login(string username, string password){
         bool doesExist = false;
         List<User> allUsers = GetAllUsers();

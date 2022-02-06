@@ -1,8 +1,18 @@
 using DL;
+using BL;
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+        });
+});
 
 // Add services to the container.
 
@@ -15,6 +25,7 @@ builder.Services.AddDbContext<DbContext, BGDBContext>(options => options.UseNpgs
 builder.Configuration.GetConnectionString("PostgreBGDB")));
 
 builder.Services.AddScoped<IRepo, EFRepo>();
+builder.Services.AddScoped<IBL, BGBL>();
 
 var app = builder.Build();
 
@@ -26,6 +37,8 @@ var app = builder.Build();
 //}
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

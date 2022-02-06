@@ -32,18 +32,18 @@ namespace WebAPI.Controllers
 
         // POST api/<AnswerController>
         [HttpPost("{bingoCardID}")]
-        public void Post([FromBody] Answer answerToAdd)
+        public Answer Post([FromBody] Answer answerToAdd)
         {
-            _bl.AddAnswer(answerToAdd);
+            return _bl.AddAnswer(answerToAdd.BingoCardID, answerToAdd);
         }
 
         // PUT api/<AnswerController>/5
         [HttpPut("{answerID}")]
-        public void Put(int answerID, [FromBody] int marked)
+        public Answer Put(int answerID, [FromBody] Answer answerToUpdate)
         {
             //use update for Marking the answers
             //gonna need get answerbyId
-            _bl.UpdateAnswer(answerID, marked);
+            return (Answer) _bl.Update(answerToUpdate);
         }
 
         // DELETE api/<AnswerController>/5
