@@ -6,10 +6,10 @@ public interface IBL
     User AddUser (User userToAdd);
     void DeleteUser(string userToDelete);
     List<Answer> GetAnswersbyBingoCardId(int bingoCardID);
-    Answer AddAnswer (Answer answerToAdd);
+    Answer AddAnswer (int bingoCardID, Answer answerToAdd);
     List<BingoCard> GetAllBingoCards();
     List<BingoCard> GetBingoCardsbyUserId(int userID);
-    Answer UpdateAnswer(int AnswerID, int marked);
+    //Answer UpdateAnswer(int answerID);
     List<Player> GetPlayersByUserId(int userID);
     void Delete(object entity);
     Answer GetAnswerbyId(int answerID);
@@ -21,7 +21,7 @@ public interface IBL
     void DeletePlayer(int id);
     BingoCard GetBingoCardById(int id);
     BingoCard AddBingoCard(BingoCard cardToAdd);
-    void AddAnswerToCard(int cId, Answer nAns);
+    BingoCard AddAnswerToCard(int cId, Answer nAns);
     User GetUserById(int id);
     void AddCardToUser(int uId, BingoCard nCard);
     Player AddPlayer(Player playerToAdd);
@@ -39,4 +39,7 @@ public interface IBL
     Game UpdateGame(int id, int winner);
     void AddPlayerToLeaderboard(int lId, int pId);
     List<Game> GetAllGames();
+    object Update(object entity);
+
+    //void Update(int answerID, bool isMarked);
 }

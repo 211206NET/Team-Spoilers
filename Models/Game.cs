@@ -15,7 +15,7 @@ public class Game{
     public string? Question { get; set; }
     public int SeriesID { get; set; }
     public int PlayerID { get; set; }
-    public bool hasWinner { get; set; }
+    public bool hasWinner { get; set; } = false;
 
     public void ToDataRow(ref DataRow row){
         row["GameID"] = (int) this.GameID;

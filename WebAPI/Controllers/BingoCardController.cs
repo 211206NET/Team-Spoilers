@@ -30,7 +30,7 @@ public class BingoCardController : ControllerBase
         return _bl.GetBingoCardById(id);
     }
 
-    [HttpGet("Get Bingo Cards by{UserID}")]
+    [HttpGet("Get Bingo Cards by {userID}")]
     public ActionResult<BingoCard> GetBingoCards(int userID)
     {
         List<BingoCard> allCards = _bl.GetBingoCardsbyUserId(userID);
@@ -46,9 +46,9 @@ public class BingoCardController : ControllerBase
 
     // PUT: api/values/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Answer value)
+    public BingoCard Put(int id, [FromBody] Answer value)
     {
-        _bl.AddAnswerToCard(id, value);
+        return _bl.AddAnswerToCard(id, value); 
     }
 
     // DELETE: api/values/5

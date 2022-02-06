@@ -40,7 +40,7 @@ public class BGBL :IBL
         return _dl.GetAnswersbyBingoCardId(bingoCardID);
     }
 
-    public Answer AddAnswer(Answer answerToAdd)
+    public Answer AddAnswer(int bingoCardID, Answer answerToAdd)
     {
         return _dl.AddAnswer(answerToAdd);
     }
@@ -58,10 +58,10 @@ public class BGBL :IBL
     public List<Player> GetPlayersByUserId(int userID){
         return _dl.GetPlayersByUserId(userID);}
 
-    public Answer UpdateAnswer(int AnswerID, int marked)
-    {
-        return (Answer) _dl.Update(marked);
-    }
+    // public Answer UpdateAnswer(int answerID)
+    // {
+    //     return (Answer) _dl.Update(Answer);
+    // }
 
     public void Delete(object entity)
     {
@@ -97,8 +97,8 @@ public class BGBL :IBL
     public BingoCard AddBingoCard(BingoCard cardToAdd){
         return _dl.AddBingoCard(cardToAdd);
     }
-    public void AddAnswerToCard(int cId, Answer nAns){
-        _dl.AddAnswerToCard(cId, nAns);
+    public BingoCard AddAnswerToCard(int cId, Answer nAns){
+        return _dl.AddAnswerToCard(cId, nAns);
     }
     public User GetUserById(int id){
         return _dl.GetUserById(id);
@@ -150,5 +150,10 @@ public class BGBL :IBL
     }
     public List<Game> GetAllGames(){
         return _dl.GetAllGames();
+    }
+
+    public object Update(object entity)
+    {
+        return _dl.Update(entity);
     }
 }

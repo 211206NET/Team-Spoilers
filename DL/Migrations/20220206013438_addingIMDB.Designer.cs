@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DL.Migrations
 {
     [DbContext(typeof(BGDBContext))]
-    [Migration("20220203201838_imdbAddedMigration")]
-    partial class imdbAddedMigration
+    [Migration("20220206013438_addingIMDB")]
+    partial class addingIMDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -171,8 +171,8 @@ namespace DL.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("text");
 
-                    b.Property<string>("IMDbID")
-                        .HasColumnType("text");
+                    b.Property<int>("IMDbID")
+                        .HasColumnType("integer");
 
                     b.Property<int>("LeaderboardID")
                         .HasColumnType("integer");
