@@ -73,6 +73,14 @@ public class EFRepo : IRepo
         List<Game> allGames = _context.Games.Select(g => g).ToList();
         return allGames;
     }
+    public List<Player> GetAllPlayers(){
+        List<Player> allPlayers = _context.Players.Select(p => p).ToList();
+        return allPlayers;
+    }
+    public List<Answer> GetAllAnswers(){
+        List<Answer> allAnswers = _context.Answers.Select(a => a).ToList();
+        return allAnswers;
+    }
 
     public Answer GetAnswerbyId(int answerID)
     {
@@ -214,5 +222,11 @@ public class EFRepo : IRepo
             }
         }
         return doesExist;
+    }
+
+    public List<Leaderboard> GetAllLeaderboards()
+    {
+        List<Leaderboard> allLeaderboards = _context.Leaderboards.Select(s => s).ToList();
+        return allLeaderboards;
     }
 }

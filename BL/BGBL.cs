@@ -23,7 +23,7 @@ public class BGBL :IBL
 
     public List<User> GetAllUsers()
     {
-        throw new NotImplementedException();
+        return _dl.GetAllUsers();
     }
 
     public User AddUser(User userToAdd)
@@ -47,7 +47,7 @@ public class BGBL :IBL
 
     public List<BingoCard> GetAllBingoCards()
     {
-        throw new NotImplementedException();
+        return _dl.GetAllBingoCards();
     }
 
     public List<BingoCard> GetBingoCardsbyUserId(int userID)
@@ -155,5 +155,19 @@ public class BGBL :IBL
     public object Update(object entity)
     {
         return _dl.Update(entity);
+    }
+
+    public List<Answer> GetAllAnswers()
+    {
+        return _dl.GetAllAnswers();
+    }
+
+    public List<Player> GetAllPlayers()
+    {
+        return _dl.GetAllPlayers();
+    }
+    public List<Leaderboard> GetAllLeaderboards()
+    {
+        return _dl.GetAllLeaderboards();
     }
 }

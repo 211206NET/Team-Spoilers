@@ -15,11 +15,12 @@ public class LeaderboardController : ControllerBase
         _bl = bl;
     }
     // GET: api/values
-    // [HttpGet]
-    // public IEnumerable<string> Get()
-    // {
-    //     return new string[] { "value1", "value2" };
-    // }
+    [HttpGet]
+    public List<Leaderboard> Get()
+    {
+        List<Leaderboard> allLeaderBoards = _bl.GetAllLeaderboards();
+        return allLeaderBoards;
+    }
 
     // GET: api/values/5
     [HttpGet("{id}")]

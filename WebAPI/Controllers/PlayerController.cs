@@ -15,11 +15,12 @@ public class PlayerController : ControllerBase
         _bl = bl;
     }
     // GET: api/values
-    //[HttpGet]
-    // public IEnumerable<string> Get()
-    // {
-    //     return new string[] { "value1", "value2" };
-    // }
+    [HttpGet]
+    public List<Player> Get()
+    {
+        List<Player> allPlayer = _bl.GetAllPlayers();
+        return allPlayer;
+    }
 
     // GET: api/values/5
     [HttpGet("{id}")]

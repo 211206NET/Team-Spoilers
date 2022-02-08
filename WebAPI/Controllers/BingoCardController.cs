@@ -16,18 +16,23 @@ public class BingoCardController : ControllerBase
         _bl = bl;
     }
 
-    // GET: api/values
-    // [HttpGet]
-    // public IEnumerable<string> Get()
-    // {
-    //     return new string[] { "value1", "value2" };
-    // }
+     //GET: api/values
+     [HttpGet]
+     public List<BingoCard> Get()
+     {
+        List<BingoCard> allBingoCards = _bl.GetAllBingoCards();
+        return allBingoCards;
+     }
 
     // GET: api/values/5
     [HttpGet("{id}")]
     public BingoCard Get(int id)
     {
+        BingoCard thisBingoCard = _bl.GetBingoCardById(id);
+        thisBingoCard.Answers = _bl.GetAnswersbyBingoCardId(id);
+        
         return _bl.GetBingoCardById(id);
+        
     }
 
     [HttpGet("Get Bingo Cards by {userID}")]

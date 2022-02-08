@@ -40,6 +40,9 @@ public interface IBL
     void AddPlayerToLeaderboard(int lId, int pId);
     List<Game> GetAllGames();
     object Update(object entity);
+    List<Answer> GetAllAnswers();
+    List<Player> GetAllPlayers();
+    List<Leaderboard> GetAllLeaderboards();
 
     //void Update(int answerID, bool isMarked);
 }

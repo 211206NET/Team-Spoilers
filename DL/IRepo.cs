@@ -37,5 +37,8 @@ public interface IRepo
     Leaderboard AddLeaderboard(Leaderboard leaderboardToAdd);
     Game GetGameById(int id);
     Leaderboard GetLeaderboardById(int id);
+    List<Answer> GetAllAnswers();
+    List<Player> GetAllPlayers();
+    List<Leaderboard> GetAllLeaderboards();
     //void Update(int answerID, bool isMarked);
 }
