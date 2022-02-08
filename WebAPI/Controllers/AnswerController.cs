@@ -17,11 +17,12 @@ namespace WebAPI.Controllers
             _bl = bl;
         }
         // // GET: api/<AnswerController>
-        // [HttpGet]
-        // public IEnumerable<string> Get()
-        // {
-        //     return new string[] { "value1", "value2" };
-        // }
+        [HttpGet]
+        public List<Answer> Get()
+        {
+            List<Answer> allAnswers = _bl.GetAllAnswers();
+            return allAnswers;
+        }
 
         // GET api/<AnswerController>/5
         [HttpGet("{bingoCardID}")]
