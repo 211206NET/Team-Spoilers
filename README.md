@@ -2,7 +2,7 @@
 
 ## Overview
 
-Bingo game that can be based on a particular series determined by a master user. The players are given different bingo cards that are filled throughout each episode until someone gets bingo. The players will fill in each square if it happens in the story. There will also be a chat during the game for players to talk to each other.
+A modern twist to the classic game of Bingo. Put on your favorite show and guess what will happen throughout the episode! Those guesses become your squares for the bingo card and if you get 5 squares in a line (horizontal, vertical or diagonal) then you win bingo! 
 
 ## Tables (Need to add ERD)
 * Bingo card table
