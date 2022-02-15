@@ -2,7 +2,7 @@
 
 ## Overview
 
-A modern twist to the classic game of Bingo. Put on your favorite show and guess what will happen throughout the episode! Those guesses become your squares for the bingo card and if you get 5 squares in a line (horizontal, vertical or diagonal) then you win bingo! 
+A modern twist to the classic game of Bingo. Put on your favorite show and guess what will happen throughout the episode! Those guesses become your squares for the bingo card and if you get 5 squares in a line (horizontal, vertical or diagonal) then you win bingo! Using the IDMB Api you can search for the TV show you are watching and more information on it.
 
 ## Tables 
 * Bingo card table
