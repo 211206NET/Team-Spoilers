@@ -4,7 +4,7 @@
 
 A modern twist to the classic game of Bingo. Put on your favorite show and guess what will happen throughout the episode! Those guesses become your squares for the bingo card and if you get 5 squares in a line (horizontal, vertical or diagonal) then you win bingo! 
 
-## Tables (Need to add ERD)
+## Tables 
 * Bingo card table
 * Series table
 * User Table (Login)
@@ -55,3 +55,7 @@ A modern twist to the classic game of Bingo. Put on your favorite show and guess
 * TypeScript
 * JavaScript
 * angular
+
+## TV Bingo ERD
+![P2 - ERD](https://user-images.githubusercontent.com/95651192/154108623-1f23043e-803d-4715-88b0-6b3ac441cda9.jpeg)
+
