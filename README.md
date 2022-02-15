@@ -54,7 +54,7 @@ A modern twist to the classic game of Bingo. Put on your favorite show and guess
 * CSS
 * TypeScript
 * JavaScript
-* angular
+* Angular
 * IMDB API
 
 ## TV Bingo ERD
